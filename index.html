@@ -17,7 +17,7 @@ is <a href="http://projects.cs.dal.ca/dalthesis"
     LaTeX Template for Theses at the Dalhousie University</h1>
 
 <i>Version 1.4, 15-Aug-2017
-  (Documentation Version 1.4.3, 18-Jun-2020 ongoing)</i>
+  (Documentation Version 1.4.6, 14-Nov-2022 ongoing)</i>
 </center>
 
 <h2><a href="#download" name=download>Download Files</a></h2>
@@ -65,7 +65,7 @@ files:<ul>
 <a href="#admin">4. Administrative Notes</a><br/>
 &nbsp&nbsp&nbsp&nbsp<a href="#history-about">4.1 About</a><br/>
 &nbsp&nbsp&nbsp&nbsp<a href="#history-a">4.2 Acknowledgements</a><br/>
-&nbsp&nbsp&nbsp&nbsp<a href="#history-u">4.3 Update History</a><br/>
+&nbsp&nbsp&nbsp&nbsp<a href="#history-u">4.3 Update History (ChangeLog)</a><br/>
 &nbsp&nbsp&nbsp&nbsp<a href="#history-p">4.4 Previous Saved Versions of dalthesis (and dalcsthesis)</a><br/>
 <a href="#lastupdate">Last Update Information and the End</a><br/>
 
@@ -91,21 +91,24 @@ authors to override many aspects of the template within their own
 text.
 Hence, make sure that you have your thesis format checked by FGS
 before trying to submit the final copy of your thesis.
-<b>This evaluation takes two business days. (last time we checked)</b>
+<b>This evaluation takes two business days (last time we checked).</b>
 </p>
 
-<p>The FGS thesis regulations can be found at
-<a href="http://www.dal.ca/faculty/gradstudies.html#regs">http://www.dal.ca/faculty/gradstudies.html#regs</a>.
+<p>The FGS thesis regulations can be found at:</br>
+<a target="_blank" href="https://dalu.sharepoint.com/sites/graduate-studies/SitePages/forms.aspx?_ga=2.91981274.132963336.1665572441-196558592.1661273966">https://dalu.sharepoint.com/sites/graduate-studies/SitePages/forms.aspx?_ga=2.91981274.132963336.1665572441-196558592.1661273966</a></br>
 This page contains format guidelines document as well a sample thesis
 template in PDF form, among other information.
 
 
 <p>
-This template is provided as an example of something that FGS will
-accept.  Students are welcome to make their thesis look as they want,
-whether by using their own template or by modifying this one, but always
-<b>have your thesis format checked by FGS before trying to submit the final
-copy of your thesis.</b>
+With this template, we try to provide an example of something that FGS
+should accept.  Students are welcome to make their thesis look as they
+want, whether by using their own template or by modifying this one,
+but always <b>have your thesis format checked by FGS before trying to
+submit the final copy of your thesis.</b>
+</br>If you notice that this template does not follow one of the
+latest FGS rules, please let us know by sending email to:
+vlado@cs.dal.ca
 </p>
 
 <h3><a href="#toc">^</a> <a href="#introduction-2" name="introduction-2">1.2 PDF/A Format</a></h3>
@@ -334,14 +337,17 @@ A number of other LaTeX templates at the Dalhousie University exist, and
 here is a list of them (if you know of any other, please
 email Vlado Keselj at vlado@dnlp.ca):
 <ul>
-<li> Math and Stats: <a href="http://www.mathstat.dal.ca/~clyde/dalthesis/index.html">http://www.mathstat.dal.ca/~clyde/dalthesis/index.html</a>
-  <br>This is the oldest thesis template, created by Clyde Clements.
 <li> Computer Science: <a href="http://web.cs.dal.ca/~vlado/dalcsthesis/">http://web.cs.dal.ca/~vlado/dalcsthesis/</a>
    <br>The Computer Science template is replaced with the dalthesis template (this template), and
       will be removed.  It was adapted from the Math templated by
       Clyde Clements by Mike McAllister and Vlado Keselj.
 <li> Oceanography: <a href="https://github.com/dankelley/dal-oce-thesis">https://github.com/dankelley/dal-oce-thesis</a>
    <br>The Oceanography template is maintained by Dan Kelly.
+<li> Math and Stats (discontinued): <a
+href="http://www.mathstat.dal.ca/~clyde/dalthesis/index.html"
+     >http://www.mathstat.dal.ca/~clyde/dalthesis/index.html</a>
+  <br>This is the oldest thesis template, created by Clyde Clements.
+      The link does not exist any more.
 </ul>
 
 <h3><a href="#toc">^</a> <a href="#introduction-q" name="introduction-q">1.7 Questions and Comments</a></h3>
@@ -349,7 +355,7 @@ email Vlado Keselj at vlado@dnlp.ca):
 
 <p> The thesis format is currently maintained by Vlado Keselj.
 If you have any questions and comments please send e-mail to
-Vlado Keselj (vlado@dnlp.ca), or talk to him directly. </p>
+Vlado Keselj (vlado@dnlp.ca). </p>
 
 <h2><a href="#toc">^</a> <a href="#package" name=package>2. Package dalthesis</a></h2>
 
@@ -797,6 +803,92 @@ line was added):
 <h3><a href="#toc">^</a> <a href="#glossary" name="glossary">3.6 Glossary (List of Abbreviations and Symbols Used)</a></h3>
 
 
+According to the FGS guidelines, two optional lists named:
+<br>List of Abbreviations and Symbols Used
+<br>and
+<br>Glossary
+<br>can be added after the abstract and before acknowledgements.
+
+<p>For generating glossaries it is recommended that you use the
+  package <code>glossaries</code> as described in the following
+  Overleaf page:
+  <a target="_blank" href="https://www.overleaf.com/learn/latex/Glossaries">https://www.overleaf.com/learn/latex/Glossaries</a>
+
+First, you need to include the package <code>glossaries</code> using
+the following line:
+<pre>
+\usepackage[acronym,toc]{glossaries}
+</pre>
+and you have to include the command:<pre>
+\makeglossaries
+</pre>
+before the first glossary entry.  You can include the command in the preamble;
+i.e., before the <code>\begin{document}</code> command.
+
+<p>Immediately after the abstract and before acknowledgements you need
+to insert the following two lines:
+<pre>
+\printglossary[type=acronymtype,
+  title=List of Abbreviations and Symbols Used,
+  toctitle=List of Abbreviations and Symbols Used]
+\printglossary
+</pre>
+The first command will generate the list of abbreviations and symbols,
+and the second will produce a glossary.  The commands will not produce
+these lists if any of the abbreviations or glossary entries are not
+defined, so these commands can always be used whether we have these
+lists or not, or whether we have only one of them.
+
+<p>Defining new abbreviations or symbol explanations can be done
+anywhere in text using a command like this:
+<pre>
+\newacronym{gcd}{GCD}{Greates Common Divisor}
+</pre>
+<p>Defining terms for the glossary is done using a command like this:
+<pre>
+\newglossaryentry{formula}
+{ name=formula, description={A mathematical expression} }
+</pre>
+The above definition can be divided across multiple lines.
+
+<p>The abbreviations and glossary entries can be mentioned in text
+using the following commands (they keys `formula' and `gcd' are used
+as examples):
+<ul>
+<li><code>\acrshort{gcd}</code> &mdash; to include the abbreviation
+  in text,
+<li><code>\acrlong{gcd}</code> &mdash; to include the expanded
+  abbreviation in text,
+<li><code>\acrfull{gcd}</code> &mdash; to include the expanded and
+  short version in parentheses of an abbreviation in text,
+<li><code>\gls{formula}</code> &mdash; to include a glossary term in
+  text,
+<li><code>\glspl{formula}</code> &mdash; to include a glossary term in
+  plural form in text,
+<li><code>\Gls{formula}</code> &mdash; to include a capitalized
+  glossary term in text,
+<li><code>\glspl{formula}</code> &mdash; to include a capitalized
+  glossary term in plural form in text,
+</ul>
+All these commands will also record the abbreviation or the glossary
+term for the appropriate list of abbreviations or glossary, with the
+page number, and it will also generate a link from the term to the
+list.
+
+<p>Please consult further other information such as the page:
+<a target="_blank" href="https://www.overleaf.com/learn/latex/Glossaries">https://www.overleaf.com/learn/latex/Glossaries</a>
+
+<p>
+The record below shows the previously recommended and older way of
+creating glossaries in LaTeX.  It does not seem to work in Overleaf if
+you are using that platform, and it is considered an older and less
+preferred way of generating glossaries.  This part is planned to be
+eventually removed.
+
+<h4>Previous Glossary Usage</h4>
+
+<p>This is the previous glossary usage and it will be kept here temporarily.
+
 <p>
 This example creates a List of Abbreviations and Symbols Used, which
 we will also call simply a <em>glossary</em>.  The example uses the
@@ -957,11 +1049,16 @@ Particular thanks go to the following contributors:
      table of contents
 </ul>
 
-<h3><a href="#toc">^</a> <a href="#history-u" name="history-u">4.3 Update History</a></h3>
+<h3><a href="#toc">^</a> <a href="#history-u" name="history-u">4.3 Update History (ChangeLog)</a></h3>
 
 
-The following template history notes are given in reversed chronological order:
+The following template history notes are given in reversed
+chronological order:
 <ul>
+<li> 2022-Nov-14 -- VK: documentation improvements (glossary):
+     documenting the use of newer package <code>glossaries</code> as
+     recommended by Overleaf.
+     </li>
 <li> 2017-Aug-15 -- Peter Selinger: Version 1.4
      <ul><li> Fixed the way list of tables and figure appear in the
      table of contents.</li></ul>
@@ -1062,7 +1159,7 @@ The following template history notes are given in reversed chronological order:
 <h2><a href="#toc">^</a> <a href="#lastupdate" name=lastupdate>Last Update Information and the End</a></h2>
 
 
-<p>Last update: 18-Jun-2020
+<p>Last update: 14-Nov-2022
 <center><i>The end.</i></center>
 </p>
 

@@ -7,6 +7,7 @@
 % delete them.
 \documentclass[12pt]{dalthesis}
 
+\raggedbottom
 \begin{document}
 
 \title{The Thesis Title}
@@ -37,16 +38,23 @@
 % This sample thesis contains no tables nor figures, so there is no
 % need to include lists of tables and figures in the front matter:
 \nolistoftables
-\nolistoffigures
+%\nolistoffigures
 
 \frontmatter
 
 \begin{abstract}
-This is a test document.
+This part contains abstract of the thesis or similar report.
+The abstract should capture a short summary of the whole paper.
+Write the abstract having in mind that at some point someone may only
+be able to access the title, author name, and abstract of the thesis,
+and they should have enough information to have an idea about the
+whole work.  Do not include citations in the abstract since they
+require a look-up in the references list.
 \end{abstract}
 
 \begin{acknowledgements}
-Thanks to all the little people who make me look tall.
+This is not a mandatory part, but authors frequently want to thank
+here people that helped them or supported them in this work.
 \end{acknowledgements}
 
 \mainmatter
@@ -133,7 +141,7 @@ and on, and on, and on, and on, and on, and on, and on, and on, and on,
 and on.
 
 
-\chapter{Doing It}
+\chapter{Background and Related Work}
 
 \section{Getting Ready}
 
@@ -151,6 +159,39 @@ Do it!
 
 Of course, you have to have pictures to show how you did it to make people
 understand things better.
+
+Consider difference between these two formulas, the first one is incorrect:
+\[ z-score = \frac{x-\mu}{\sigma} \]
+and this is the proper way to format the \textit{z-score} variable:
+\[ \textit{z-score} = \frac{x-\mu}{\sigma} \]
+
+
+
+\chapter{Methodology}
+
+In a typical thesis structure, somewhere around the third chapter, we
+could have a methodology description.  We will fill some text now.
+A common practice to fill text in a sample document is the so-called
+``Lorem ipsum'' text, which consists of randomly generated Latin text
+as follows.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+aliquip ex ea commodo consequat. Duis aute irure dolor in
+reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+culpa qui officia deserunt mollit anim id est laborum.
+
+% This is an example of a figure
+\begin{figure}
+\centering
+\rule{1pt}{4cm}
+\caption[Caption short title]{This is the long caption, with longer
+  description.}
+\label{fig:simple}
+\end{figure}
+
 
 \chapter{Conclusion}
 
