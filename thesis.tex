@@ -1,11 +1,26 @@
-% thesis.tex (also saved as simple.tex) -- a simple thesis document
-% for demonstrating dalthesis.cls class file, or to use as a starting
-% document for writing a thesis.
-% If you are not familiar with TeX and LaTeX, the first thing that you
-% can learn that line comments start with the percent sign (%), so
-% these lines are ignored by the system.  Feel free to change them or
-% delete them.
+% thesis.tex -- a sample thesis document in dalthesis.cls package
+% This is a relatively simple thesis example which can be used to
+% start writing your thesis.
 \documentclass[12pt]{dalthesis}
+
+% These packages are not mandatory but they are generally recommended.
+% The package graphicx is the common package used to include images in
+% the document, usually as a part of a figure:
+\usepackage{graphicx}
+% The package hyperref is needed to easily navigate through the thesis
+% PDF file by making citations clickable, elements of the table of
+% contents, URLs, etc.  Including it just by default like this:
+%\usepackage{hyperref}
+% creates red-bordered boxes around clickable items, which although
+% helpful to notice clickable areas do not look nice.  A way to hide
+% those boxes, but change colour of clickable text is as follows:
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=black,
+  filecolor=magenta,
+  urlcolor=blue, }
 
 \begin{document}
 
